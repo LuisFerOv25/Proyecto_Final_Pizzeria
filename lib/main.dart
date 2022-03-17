@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:proyecto_final_pizzeria/Login.dart';
+import 'package:proyecto_final_pizzeria/Iniciar_sesion.dart';
+
 
 void main() => runApp(MyApp());
 
@@ -7,11 +8,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        body: login(),
+     initialRoute: Iniciarsesion.id,
+     routes: {
+       Iniciarsesion.id : (context) => Iniciarsesion(),
 
-
-      ),
+     },
+     
     );
   }
 }
