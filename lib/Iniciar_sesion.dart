@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:proyecto_final_pizzeria/Menu.dart';
 import 'package:proyecto_final_pizzeria/Registro.dart';
 
 class Iniciarsesion extends StatefulWidget {
@@ -22,7 +23,6 @@ class _IniciarsesionState extends State<Iniciarsesion> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Material App',
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
@@ -143,7 +143,7 @@ class _IniciarsesionState extends State<Iniciarsesion> {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => Registro(),// por defecto se va al registro pero uds colocan la ventana al menu
+                      builder: (context) => Menu(),// por defecto se va al registro pero uds colocan la ventana al menu
                     ));
               } else {
                 showDialog(
