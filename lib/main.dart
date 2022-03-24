@@ -2,15 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:proyecto_final_pizzeria/Iniciar_sesion.dart';
 
 
-void main() => runApp(Pizzeria());
+void main() => runApp(MyApp());
 
-class Pizzeria extends StatefulWidget {
+class MyApp extends StatefulWidget {
 
   @override
-  State<Pizzeria> createState() => _PizzeriaState();
+  State<MyApp> createState() => _MyAppState();
 }
 
-class _PizzeriaState extends State<Pizzeria> {
+class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
