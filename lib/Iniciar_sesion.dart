@@ -1,3 +1,4 @@
+// ignore_for_file: unnecessary_new, prefer_const_constructors, deprecated_member_use, use_key_in_widget_constructors
 
 import 'package:flutter/material.dart';
 import 'package:proyecto_final_pizzeria/Menu.dart';
@@ -15,11 +16,9 @@ final pass = TextEditingController();
 String usuario = '';
 String password = '';
 
-bool passvisible=true;
-
+bool passvisible = true;
 
 class _IniciarsesionState extends State<Iniciarsesion> {
-  
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -30,7 +29,6 @@ class _IniciarsesionState extends State<Iniciarsesion> {
           title: Text('Iniciar sesion'),
         ),
         body: SingleChildScrollView(
-          
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -40,8 +38,10 @@ class _IniciarsesionState extends State<Iniciarsesion> {
                 width: double.infinity,
               ),
               Text('Red Pizza',
-                  style: TextStyle(color: Colors.black, fontSize: 25.0, fontStyle: FontStyle.italic)),
-              
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 25.0,
+                      fontStyle: FontStyle.italic)),
               _campousuario(),
               SizedBox(
                 height: 10.0,
@@ -100,19 +100,14 @@ class _IniciarsesionState extends State<Iniciarsesion> {
                 labelText: 'Contraseña',
                 suffixIcon: IconButton(
                   icon: Icon(
-                    passvisible
-                    ? Icons.visibility
-                    : Icons.visibility_off,
-                    color: Theme.of(context).primaryColorDark
-                  ),
+                      passvisible ? Icons.visibility : Icons.visibility_off,
+                      color: Theme.of(context).primaryColorDark),
                   onPressed: () {
-                    
                     setState(() {
-                      passvisible=!passvisible;
+                      passvisible = !passvisible;
                     });
                   },
-                  
-                  ),
+                ),
                 icon: Icon(Icons.lock),
               ),
               onChanged: (valor) => setState(() {
@@ -137,13 +132,13 @@ class _IniciarsesionState extends State<Iniciarsesion> {
             usuario = user.text;
             password = pass.text;
 
-            if(usuario.isNotEmpty || password.isNotEmpty){
-
+            if (usuario.isNotEmpty || password.isNotEmpty) {
               if (usuario == 'pizza' && password == 'pizza') {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => Menu(),// por defecto se va al registro pero uds colocan la ventana al menu
+                      builder: (context) =>
+                          Menu(), // por defecto se va al registro pero uds colocan la ventana al menu
                     ));
               } else {
                 showDialog(
@@ -165,11 +160,10 @@ class _IniciarsesionState extends State<Iniciarsesion> {
                   },
                 );
               }
-            }else if(usuario.isEmpty || password.isEmpty){
-                Scaffold.of(context)
-                      .showSnackBar(SnackBar(content: Text('Se requiere ingresar un usuario o contraseña'))
-                      
-                      );
+            } else if (usuario.isEmpty || password.isEmpty) {
+              Scaffold.of(context).showSnackBar(SnackBar(
+                  content:
+                      Text('Se requiere ingresar un usuario o contraseña')));
             }
           });
     });
