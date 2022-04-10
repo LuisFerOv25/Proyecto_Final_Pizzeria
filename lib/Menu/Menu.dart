@@ -1,7 +1,5 @@
-// ignore_for_file: file_names, prefer_const_literals_to_create_immutables, prefer_const_constructors, use_key_in_widget_constructors
-
 import 'package:flutter/material.dart';
-import 'package:curved_navigation_bar/curved_navigation_bar.dart';
+import 'package:proyecto_final_pizzeria/importaciones.dart';
 
 class Menu extends StatefulWidget {
   @override
@@ -9,18 +7,23 @@ class Menu extends StatefulWidget {
 }
 
 class _MenuState extends State<Menu> {
-  int _page = 1;
-  // ignore: prefer_final_fields
+  int index = 0;
+  //Aqui se colocan las vistas de cada pantalla
+    final pantallas =[
+      Home(),
+      Promo(),
+      Buscar(),
+      catalogo(),
+      Perfil(),
+    ];
+ 
   GlobalKey<CurvedNavigationBarState> _bottomNavigationKey = GlobalKey();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.red[900],
-          centerTitle: true,
-          title: Text('RED PIZZA'),
-        ),
+      
+        body: pantallas[index],
         bottomNavigationBar: CurvedNavigationBar(
           key: _bottomNavigationKey,
           index: 0,
@@ -39,29 +42,12 @@ class _MenuState extends State<Menu> {
           animationDuration: Duration(milliseconds: 600),
           onTap: (index) {
             setState(() {
-              _page = index;
+              this.index=index;
             });
           },
           letIndexChange: (index) => true,
         ),
-        body: Container(
-          color: Colors.white,
-          child: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Text(_page.toString(), textScaleFactor: 10.0),
-                ElevatedButton(
-                  child: Text('Pestaña'),
-                  onPressed: () {
-                    final CurvedNavigationBarState? navBarState =
-                        _bottomNavigationKey.currentState;
-                    navBarState?.setPage(1);
-                  },
-                )
-              ],
-            ),
-          ),
-        ));
+        
+        );
   }
 }

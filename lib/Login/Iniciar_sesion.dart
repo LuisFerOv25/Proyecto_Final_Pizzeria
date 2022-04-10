@@ -1,8 +1,7 @@
-// ignore_for_file: unnecessary_new, prefer_const_constructors, deprecated_member_use, use_key_in_widget_constructors
 
 import 'package:flutter/material.dart';
-import 'package:proyecto_final_pizzeria/Menu.dart';
-import 'package:proyecto_final_pizzeria/Registro.dart';
+import 'package:proyecto_final_pizzeria/Menu/Menu.dart';
+import 'package:proyecto_final_pizzeria/importaciones.dart';
 
 class Iniciarsesion extends StatefulWidget {
   static String id = 'Iniciarsesion';
@@ -133,7 +132,7 @@ class _IniciarsesionState extends State<Iniciarsesion> {
             password = pass.text;
 
             if (usuario.isNotEmpty || password.isNotEmpty) {
-              if (usuario == 'pizza' && password == 'pizza') {
+              if (usuario == '1' && password == '1') {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
