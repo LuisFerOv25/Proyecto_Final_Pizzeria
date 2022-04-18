@@ -40,7 +40,10 @@ class _IniciarsesionState extends State<Iniciarsesion> {
                   style: TextStyle(
                       color: Colors.black,
                       fontSize: 25.0,
-                      fontStyle: FontStyle.italic)),
+                      fontFamily: 'snappyservice')),
+                SizedBox(
+                height: 10.0,
+              ),       
               _campousuario(),
               SizedBox(
                 height: 10.0,

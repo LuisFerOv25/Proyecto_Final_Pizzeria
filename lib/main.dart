@@ -3,6 +3,9 @@
 import 'package:flutter/material.dart';
 import 'package:proyecto_final_pizzeria/Login/Iniciar_sesion.dart';
 
+import 'Pantalla inicial/Pinicial.dart';
+
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatefulWidget {
@@ -25,9 +28,12 @@ void initState() {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      initialRoute: Iniciarsesion.id,
+      initialRoute: 'Pantalla_Inicial',
+
       routes: {
-        Iniciarsesion.id: (context) => Iniciarsesion(),
+
+      'Pantalla_Inicial' :(BuildContext context)=> Pinicial(),
+      'Login' :(BuildContext context)=> Iniciarsesion(),
       },
     );
   }
