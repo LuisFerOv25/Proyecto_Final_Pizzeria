@@ -94,7 +94,7 @@ class _carro_comprasState extends State<carro_compras> {
                   physics: NeverScrollableScrollPhysics(),
                   itemCount: carro.length,
                   itemBuilder: (context, index) {
-                    final String imagen = carro[index].imagen;
+                    final String imagen = carro[index].image;
                     var item = carro[index];
                     return Column(
                       children: [
@@ -110,7 +110,7 @@ class _carro_comprasState extends State<carro_compras> {
                                     width: 100,
                                     height: 100,
                                     child: new Image.asset(
-                                        "assets/images/pizza-tocineta.png",
+                                        "assets/images/$imagen",
                                         fit: BoxFit.contain),
                                   )),
                                   Column(
@@ -270,7 +270,7 @@ class _carro_comprasState extends State<carro_compras> {
     pedido = pedido + "\n";
     pedido = pedido + "RED PIZZA S.A.S";
     pedido = pedido + "\n";
-    pedido = pedido + "Cliente: Null";
+    pedido = pedido + "Cliente:";
     pedido = pedido + "\n";
 
     for (int i = 0; i < carro.length; i++) {

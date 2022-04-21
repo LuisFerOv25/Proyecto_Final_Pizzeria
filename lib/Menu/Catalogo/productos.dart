@@ -4,13 +4,13 @@ import 'package:flutter/material.dart';
 class Productos{
 
   final String nombre;
-  final String imagen;
+  final String image;
   final Color color;
   final int precio;
   int cantidad=0;
 
    Productos(
-    this.nombre, this.imagen, this.color, this.precio,this.cantidad
+    this.nombre, this.image, this.color, this.precio,this.cantidad
     
     );
 
