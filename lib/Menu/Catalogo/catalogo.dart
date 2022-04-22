@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:proyecto_final_pizzeria/Menu/Catalogo/detalle.dart';
 import 'package:proyecto_final_pizzeria/importaciones.dart';
 
 class catalogo extends StatefulWidget {
@@ -9,6 +10,8 @@ class catalogo extends StatefulWidget {
 class _catalogoState extends State<catalogo> {
   List<Productos> _productos = <Productos>[];
   List<Productos> _listacarro = <Productos>[];
+
+  get child => null;
 
   @override
   void initState() {
@@ -97,12 +100,22 @@ class _catalogoState extends State<catalogo> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
+                        FlatButton(
+                          child: Text("Mas"),
+                          onPressed: () =>
+                              Navigator.of(context).push(new MaterialPageRoute(
+                                  builder: (context) => Detalle(
+                                      nombre: item.nombre,
+                                      precio: item.precio,
+                                      // imagen: item.image
+                                      imagen: item.image))),
+                        ),
                         SizedBox(height: 25),
                         Text(
                           item.precio.toString(),
                           style: TextStyle(
                               fontWeight: FontWeight.bold,
-                              fontSize: 23.0,
+                              fontSize: 7.0,
                               color: Colors.black),
                         ),
                         Padding(
@@ -148,15 +161,18 @@ class _catalogoState extends State<catalogo> {
       Productos('Pizza Jamon', 'Pizza-Jamon.png', Colors.black, 42000, 1),
       Productos('Pizza Manzana', 'Pizza-manzana.png', Colors.black, 35000, 1),
       Productos('Pizza Mixta', 'Pizza-mixta.png', Colors.black, 35000, 1),
-      Productos('Pizza Napolitana', 'Pizza-napolitana.png', Colors.black, 45000, 1),
+      Productos(
+          'Pizza Napolitana', 'Pizza-napolitana.png', Colors.black, 45000, 1),
       Productos('Pizza Pollo', 'Pizza-Pollo.png', Colors.black, 25000, 1),
       Productos('Pizza Salami', 'Pizza-Salami.png', Colors.black, 38000, 1),
       Productos('Pizza Tocineta', 'Pizza-tocineta.png', Colors.black, 55000, 1),
       Productos('Pizza Vegetal', 'Pizza-vegetales.png', Colors.black, 35000, 1),
       Productos('Pizza Jamon x2', 'Pizza-Jamon.png', Colors.black, 82000, 1),
-      Productos('Pizza Manzana x2', 'Pizza-manzana.png', Colors.black, 75000, 1),
+      Productos(
+          'Pizza Manzana x2', 'Pizza-manzana.png', Colors.black, 75000, 1),
       Productos('Pizza Mixta x2', 'Pizza-mixta.png', Colors.black, 55000, 1),
-      Productos('Pizza Napolitana x2', 'Pizza-napolitana.png', Colors.black,80000, 1),
+      Productos('Pizza Napolitana x2', 'Pizza-napolitana.png', Colors.black,
+          80000, 1),
     ];
 
     setState(() {

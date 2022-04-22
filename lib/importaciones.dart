@@ -8,4 +8,3 @@ export 'package:curved_navigation_bar/curved_navigation_bar.dart';
 export 'package:proyecto_final_pizzeria/Menu/Buscar.dart';
 export 'package:proyecto_final_pizzeria/Menu/Home.dart';
 export 'package:proyecto_final_pizzeria/Menu/perfil_usuario.dart';
-export 'package:proyecto_final_pizzeria/Menu/promociones.dart';
